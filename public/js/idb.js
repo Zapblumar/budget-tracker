@@ -32,10 +32,10 @@ function saveRecord(record) {
 
 function uploadTransaction() {
   // open a transaction on your pending db
-  const transaction = db.transaction(["pending"], "readwrite");
+  const transaction = db.transaction(["new_transaction"], "readwrite");
 
   // access your pending object store
-  const store = transaction.objectStore("pending");
+  const store = transaction.objectStore("new_transaction");
 
   // get all records from store and set to a variable
   const getAll = pizzaObjectStore.getAll();
@@ -57,8 +57,8 @@ function uploadTransaction() {
             throw new Error(serverResponse);
           }
 
-          const transaction = db.transaction(["pending"], "readwrite");
-          const store = transaction.objectStore("pending");
+          const transaction = db.transaction(["new_transaction"], "readwrite");
+          const store = transaction.objectStore("penew_transactionnding");
           // clear all items in your store
           store.clear();
 
